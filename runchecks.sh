@@ -26,7 +26,7 @@ done
 echo "Files downloaded!"
 echo "Performing checkup:"
 clang-tidy --version
-clang-tidy **/*.cpp **/*.c **/*.h **/*.hpp **/*.C **/*.cc **/*.CPP **/*.c++ **/*.cp **/*.cxx > clang-tidy-report.txt
+clang-tidy **/*.cpp **/*.c **/*.h **/*.hpp **/*.C **/*.cc **/*.CPP **/*.c++ **/*.cp **/*.cxx -- > clang-tidy-report.txt
 
 clang-format  **/*.cpp **/*.c **/*.h **/*.hpp **/*.C **/*.cc **/*.CPP **/*.c++ **/*.cp **/*.cxx > clang-format-report.txt
 
