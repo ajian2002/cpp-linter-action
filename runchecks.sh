@@ -26,9 +26,11 @@ done
 echo "Files downloaded!"
 echo "Performing checkup:"
 clang-tidy --version
-clang-tidy **/*.cpp **/*.c **/*.h **/*.hpp **/*.C **/*.cc **/*.CPP **/*.c++ **/*.cp **/*.cxx -- > clang-tidy-report.txt
+SRC=$(git ls-tree --full-tree -r HEAD | grep -e "\.\(c\|h\|hpp\|cpp\)\$" | cut -f 2)
 
-clang-format  **/*.cpp **/*.c **/*.h **/*.hpp **/*.C **/*.cc **/*.CPP **/*.c++ **/*.cp **/*.cxx > clang-format-report.txt
+clang-tidy $SRC -- > clang-tidy-report.txt
+
+clang-format  $SRC > clang-format-report.txt
 
 # cppcheck --enable=all --std=c++11 --language=c++ --output-file=cppcheck-report.txt *
 
