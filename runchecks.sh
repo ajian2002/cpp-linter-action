@@ -28,7 +28,7 @@ echo "Performing checkup:"
 clang-tidy --version
 clang-tidy **/*.cpp **/*.c **/*.h **/*.hpp **/*.C **/*.cc **/*.CPP **/*.c++ **/*.cp **/*.cxx > clang-tidy-report.txt
 
-clang-format  -i **/*.cpp **/*.c **/*.h **/*.hpp **/*.C **/*.cc **/*.CPP **/*.c++ **/*.cp **/*.cxx > clang-format-report.txt
+clang-format  **/*.cpp **/*.c **/*.h **/*.hpp **/*.C **/*.cc **/*.CPP **/*.c++ **/*.cp **/*.cxx > clang-format-report.txt
 
 # cppcheck --enable=all --std=c++11 --language=c++ --output-file=cppcheck-report.txt *
 
