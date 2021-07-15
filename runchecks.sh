@@ -59,7 +59,7 @@ OUTPUT+="$PAYLOAD_FORMAT"eCTF20/mb/drm_audio_fw/src on
 OUTPUT+=$'\n```\n'
 fi
 if [ ${#PAYLOAD_CPPCHECK} -ne 0];then
-OUTPUT+=$'\n**CPPCHECK WARNINGS**:\n'
+OUTPUT=$'\n**CPPCHECK WARNINGS**:\n'
 OUTPUT+=$'\n```\n'
 OUTPUT+="$PAYLOAD_CPPCHECK"
 OUTPUT+=$'\n```\n' 
