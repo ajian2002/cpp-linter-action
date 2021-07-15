@@ -45,21 +45,25 @@ echo $PAYLOAD_FORMAT
 echo "Cppcheck errors:"
 echo $PAYLOAD_CPPCHECK
 
+if [ ${#PAYLOAD_TIDY} -ne 0];then
 OUTPUT=$'**CLANG-TIDY WARNINGS**:\n'
 OUTPUT+=$'\n```\n'
 OUTPUT+="$PAYLOAD_TIDY"
 OUTPUT+=$'\n```\n'
+fi
 
+if [ ${#PAYLOAD_FORMAT} -ne 0];then
 OUTPUT=$'**CLANG-FORMAT WARNINGS**:\n'
 OUTPUT+=$'\n```\n'
 OUTPUT+="$PAYLOAD_FORMAT"eCTF20/mb/drm_audio_fw/src on
 OUTPUT+=$'\n```\n'
-
+fi
+if [ ${#PAYLOAD_CPPCHECK} -ne 0];then
 OUTPUT+=$'\n**CPPCHECK WARNINGS**:\n'
 OUTPUT+=$'\n```\n'
 OUTPUT+="$PAYLOAD_CPPCHECK"
 OUTPUT+=$'\n```\n' 
-
+fi
 PAYLOAD=$(echo '{}' | jq --arg body "$OUTPUT" '.body = $body')
 
 curl -s -S -H "Authorization: token $GITHUB_TOKEN" --header "Content-Type: application/vnd.github.VERSION.text+json" --data "$PAYLOAD" "$COMMENTS_URL"
