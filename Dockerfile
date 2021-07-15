@@ -5,7 +5,7 @@ LABEL com.github.actions.description="Lint your code with clang-tidy in parallel
 LABEL com.github.actions.icon="code"
 LABEL com.github.actions.color="gray-dark"
 
-LABEL repository="https://github.com/ArtificialAmateur/cpp-linter-action"
+LABEL repository="https://github.com/ajian/cpp-linter-action"
 LABEL maintainer="ArtificialAmateur <20297606+ArtificialAmateur@users.noreply.github.com>"
 
 WORKDIR /build
